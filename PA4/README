@@ -1,0 +1,75 @@
+Name: Youhao Wang
+USC loginid:youhaowa
+CSCI 455 PA4
+Spring 2016
+
+----------------------------------------------
+CERTIFY IT'S YOUR WORK
+
+"I certify that the work submitted for this assignment does not
+violate USC's student conduct code.  In particular, the work is my
+own, not a collaboration, and does not involve code created by other
+people, except for the the resources explicitly mentioned in the CS 455
+Course Syllabus.  And I did not share my solution or parts of it with
+other students in the course."
+
+Initial below to "sign" the above statement:
+
+Youhao Wang
+----------------------------------------------
+ACKNOWLEDGE ANY OUTSIDE SOURCES
+
+List here any code you submitted for this assignment that was written
+with significant help of a course staff member, or code used from the
+textbook.  Be specific about what methods or algorithms are involved,
+and what sections of the textbook are involved (if applicable): [you do
+not need to list any of the code that we wrote for the assignment,
+i.e., the contents of the starter files for the assignment]
+
+
+the Lab 9. 	
+----------------------------------------------
+KNOWN BUGS or LIMITATIONS:
+
+
+N.A.
+----------------------------------------------
+DESCRIPTION OF YOUR CLASS DESIGN AND ALGORITHMS AND DATA STRUCTURES USED:
+
+1. In the class of Prefix. I use the data structure of LinkedList to record the prefix.
+And in shiftIn method, I use addLast and removeFirst method of LinkedList. I choose LinkedList
+because compare to ArrayList,it is dynamic, that means when we remove from first, it will not cost
+any space. And the method of ShiftIn is O(1). 
+
+2. In the class of RandomTextGenerator class. There are three main public method: 
+ a. readSource: this method read the input file. And save data in HashMap. in HashMap, I use Prefix
+   as the key, and a ArrayList of String as value. This ArrayList represent successor of the prefix.
+   Here I use ArrayList because in the generateText method, I will access of item in ArrayList by index 
+   after random process, and it is O(1) compare to LinkedList O(n). In addition, in order to random generate
+   the initial prefix, I also use a ArrayList to record all prefix. The time complexity of this Method 
+   is O(source length).
+ b. generateText:This method is to generate the text. and I use a private helper method inialPrefix to initial
+   the prefix when it begin and when it comes to end of source text. Everytime in the for loop, I will access the
+   value by Prefix key of map. And then I will randomly choose the String as word in ArrayList. And then ShiftIn 
+   this word. Besides, I also record this word by another ArrayList for the purpose of output to file.The time 
+   complexity of this method is O(output length).
+ c. outToFile: This method will output the generated word to the text file according to the given format. 
+
+3. In the class of GenText, the main function is to open the readin file and generate out file. And it will make the 
+   error checking. Everytime it has error, the program will give the specific error reason, the usage of this program,
+   and then exit without any output file. If there is no error, it will achieve generate words to out file function. The
+   whole time complexity of this program is O(s + g). 
+
+4. BadDataException Class: this class is used for error checking.
+
+
+----------------------------------------------
+ANY OTHER NOTES FOR THE GRADER:
+
+1. At the end of content of every output file, there is a “.” it is not the mistake at all! I just want to make it more like of real English text.
+2. I will count the time to execute the whole program and display on the console. 
+
+
+
+
+
